@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  
+  <style>
+    
+    /* .fixed-form {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+  
+	
+} */
+
+    /* Add some basic styling to the navbar */
+    
+    ul.navbar {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+    }
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+.navbar li {
+      display: flex;
+      align-items: center;
+    }
+.navbar img {
+      margin-right: 5px;
+    }
+
+    ul.navbar li {
+      flex-grow: 1;
+    }
+
+    ul.navbar li a {
+      display: block;
+      color: pink;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+    .dropdown-content {
+      display: none;
+      position: fixed;
+      background-color: purple;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+h1 {
+  margin-left: 10px; 
+}
+/* section{
+  background-image: url('assets/images/candd.jpg');
+} */
+</style>
+</head>
+<ul class="navbar">
+  <li>
+    <img src="https://media.istockphoto.com/id/1186734274/vector/vector-image-of-dog-and-cat-logo-on-white.jpg?s=170667a&w=0&k=20&c=HLwkvF-jEr2MxjRnaOdvWw6uCHsZ3NWiC7wSyyMU4fE="
+    alt="Heads and Tails Logo" width="100px" height="100px">
+  <h4 style="color: pink;">FLUFFY TAILS</h4>
+  </li>
+  <li><a href="#">Home</a></li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="breed">Breed</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="veterinarian">Veterinarian</a>
+  
+    </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="petregister">Pet Care</a>
+  
+  </li>
+   
+  <li class="nav-item">
+    <a class="nav-link" routerLink="reviews">Reviews</a>
+  
+  </li>
+  <li class="dropdown">
+    <a href="#"><img src="https://i.pinimg.com/564x/12/0c/db/120cdbb156b59eea88d9d213c08f9184.jpg" 
+      width="30px" height="30px"></a>
+      <div class="dropdown-content">
+        <li class="nav-item">
+          <a class="nav-link"   routerLink="login"> Login </a>
+        </li>
+       
+       
+       
+        
+      </div>
+  </li>
+</ul>
+<section class="vh-200 gradient-custom">
+  <div class="container py-5 h-100" style="margin-left: 30%;">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5" style="text-align: center;">Write Your Review</h3>
+            <form (ngSubmit)="submitReview()" #reviewForm="ngForm" style="max-width: 400px; margin: 0 auto;top:-1px">
+              <div class="row">
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <label for="rating"><h5>Rating:</h5></label>
+                    <input class="form-control form-control-lg" type="number" id="rating" name="rating" [(ngModel)]="review.rating" required min="1" max="5">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <label for="comment"><h5>Comment:</h5></label>
+                    <textarea class="form-control form-control-lg" id="comment" name="comment" [(ngModel)]="review.comment" required style="height: 150px;"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="form-outline">
+                  <ul>
+                    <li *ngFor="let review of reviews">
+                      Rating: {{ review.rating }} - Comment: {{ review.comment }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" [disabled]="reviewForm.invalid" class="btn btn-info" >Submit Review</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,149 @@
+<html>
+<head>
+
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+    }
+    .navbar li {
+      display: flex;
+      align-items: center;
+    }
+    .navbar img {
+      margin-right: 5px;
+    }
+    ul.navbar {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+    }
+
+    ul.navbar li {
+      flex-grow: 1;
+    }
+    
+    ul.navbar li a {
+      display: block;
+      color: pink;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    ul.navbar li a:hover {
+      background-color: #111;
+    }
+    .dropdown-content {
+      display: none;
+      position: fixed;
+      background-color: purple;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+h1 {
+  margin-left: 10px; 
+}
+
+</style>
+</head>
+
+<body >
+  <div class="container1">
+    <!-- <img src="https://media.istockphoto.com/id/1186734274/vector/vector-image-of-dog-and-cat-logo-on-white.jpg?s=170667a&w=0&k=20&c=HLwkvF-jEr2MxjRnaOdvWw6uCHsZ3NWiC7wSyyMU4fE="
+      alt="Heads and Tails Logo" width="100px" height="100px">
+    <h1>HEADS AND TAILS</h1> -->
+  </div>
+<ul class="navbar">
+<li>
+  <img src="https://media.istockphoto.com/id/1186734274/vector/vector-image-of-dog-and-cat-logo-on-white.jpg?s=170667a&w=0&k=20&c=HLwkvF-jEr2MxjRnaOdvWw6uCHsZ3NWiC7wSyyMU4fE="
+  alt="Heads and Tails Logo" width="60px" height="60px" >
+  <h4 style="color: pink;">HEADS AND TAILS</h4>
+<!-- <h1>HEADS AND TAILS</h1> -->
+</li>
+<li><a href="#">Home</a></li>
+<li class="nav-item">
+  <a class="nav-link" routerLink="breed">Breed</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="veterinarian">Veterinarian</a>
+
+  </li>
+<li class="nav-item">
+  <a class="nav-link" routerLink="petregister">Pet Care</a>
+
+</li>
+ 
+<li class="nav-item">
+  <a class="nav-link" routerLink="reviews">Reviews</a>
+
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="https://i.pinimg.com/564x/12/0c/db/120cdbb156b59eea88d9d213c08f9184.jpg" 
+    width="30px" height="30px"></a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+    <div class="dropdown-content">
+      <!-- <a class="nav-link" routerLink="login">Login</a> -->
+      <!-- <a href="#">New Customer? SignIn</a> -->
+      <a href="#">LogOut</a>
+    </div>
+</li>
+</ul>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let cat of cats">
+  
+        <div class="card" style="width:300px; height: 475px;">
+          <img class="card-img-top" src={{cat.imagePath}} alt="" style="width:70%; height: 100%;">
+          <div class="card-body">
+            <h4 class="card-title"> {{cat.name}} </h4>
+            <p class="card-text"> {{cat.description}} </p>
+            <h6>Price: ₹{{cat.price}}/-</h6>
+            <p align="right">
+            <button  (click)="addToCart(cat)" class="btn btn-primary">Add to Cart</button>
+            </p>
+          </div>&nbsp;&nbsp;
+        
+      
+      </div>
+    </div>
+  </div>

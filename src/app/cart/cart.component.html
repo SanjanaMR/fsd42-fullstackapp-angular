@@ -1,0 +1,66 @@
+<h2 align="center"> Pet Cart </h2>
+<!-- <div class="container" *ngFor="let item of cartItems"> -->
+    <div>
+    <table class="table table-bordered table-sm table-hover table-striped text-center">
+        <thead>
+            <tr class="bg-info text-white">
+                <th> Pet Image </th>
+                <th> Pet Id </th>
+                <th> Name </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <thead>
+            <tbody>
+            <tr *ngFor="let item of cartItems">
+    <td> <img src="{{ item.imagePath }}" height="100px" width="100px" /> </td>
+    <td> {{ item.id }} </td>
+    <td> {{ item.name }} </td>
+    <td> {{ item.price }} </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td align="right"><h3>Total</h3></td>
+    <td>{{total}}</td>
+</tr>
+  </tbody>
+</table>
+</div>
+<!-- <div class="container" *ngIf="cartItems,cartItemss">
+    <table class="table table-bordered table-sm table-hover table-striped text-center">
+        <thead>
+            <tr class="bg-info text-white">
+                <th> Pet Image </th>
+                <th> Pet Id </th>
+                <th> Name </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cat of cartItems">
+                <td> <img src="{{cat.imagePath}}" height="100px" width="100px"/> </td>
+                <td> {{cat.id}} </td>
+                <td> {{cat.name}} </td>
+                <td> {{cat.price}} </td>
+            </tr>
+            
+            <tr *ngFor="let dog of cartItems">
+                <td> <img src="{{dog.imagePath}}" height="100px" width="100px"/> </td>
+                <td> {{dog.id}} </td>
+                <td> {{dog.name}} </td>
+                <td> {{dog.price}} </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td align="right"><h3>Total</h3></td>
+                <td>{{total}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+ -->

@@ -1,0 +1,46 @@
+.dog-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px; /* Adjust the height as needed */
+  background-color: pink;
+}
+
+.dog-image {
+  position: absolute;
+  top: 50%;
+  left: -200px; /* Initial position off-screen to the left */
+  width: 220px; /* Adjust the size as needed */
+  height: auto;
+  animation: dogAnimation 5s linear forwards;
+}
+
+.message {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 24px; /* Adjust the font size as needed */
+  opacity: 0;
+  animation: messageAnimation 5s linear forwards;
+  font-style:oblique;
+}
+
+
+@keyframes dogAnimation {
+  0% {
+    transform: translateX(0%); /* Start position */
+  }
+  70% {
+    transform: translateX(calc(100% + 220px)); /* Scroll to the right end */
+  }
+  70% {
+    transform: translateX(calc(100% + 250px)) translateY(-100px); /* Jump up */
+  }
+  80% {
+    transform: translateX(calc(100% + 250px)) translateY(0); /* Jump down */
+  }
+  100% {
+    transform: translateX(calc(100% + 220px)) translateY(-50px); /* Final position at the right corner */
+  }
+}

@@ -1,0 +1,42 @@
+<!-- <p>admin works!</p> -->
+<h1 align="center"> Customers Details </h1>
+
+<div class="container">
+    <table class="table table-bordered table-sm table-hover table-striped text-center"></table>
+    <table border="2" align="center">
+        <thead>
+        <tr>
+            <th> CustomerId   </th>
+            <th> CustomerName  </th>
+            <th> Country  </th>
+            <th> Address  </th>
+            <th> Gender  </th>
+            <th>Date of Register</th>
+            <th> Mobile No </th>
+            <th>EmailId</th>
+            <!-- <th>Password</th> -->
+            <!-- <th>Confirm Password</th> -->
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of customers">
+
+            <td> {{cust.custId}} </td>
+            <td> {{cust.custName | uppercase}} </td>
+            <td> {{cust.country}} </td>
+            <td> {{cust.address}} </td>
+            <td> {{cust.gender | lowercase}} </td>
+            <td> {{cust.dor}} </td>
+            <td> {{cust.mobNo}} </td>
+            <td> {{cust.emailId}} </td>
+            <!-- <td> {{cust.password}} </td> -->
+            <!-- <td> {{cust.confirmPassword}} </td> -->
+        </tr>
+    </tbody>
+    </table>
+
+
+ 
+
+</div>
